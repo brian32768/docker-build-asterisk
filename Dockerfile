@@ -28,6 +28,7 @@ RUN apt-get update -qq && \
 	    libncurses5 ncurses-bin ncurses-term \
             portaudio19-dev \
             python-pip \
+	    python-setuptools \
             unixodbc-dev \
             uuid \
             uuid-dev \

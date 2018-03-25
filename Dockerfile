@@ -28,6 +28,7 @@ RUN apt-get update -qq && \
             libxslt1-dev \
 	    libncurses5 ncurses-bin ncurses-term \
             portaudio19-dev \
+	    procps \
             python-pip \
 	    python-setuptools \
             unixodbc-dev \

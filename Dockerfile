@@ -9,6 +9,7 @@ RUN apt-get update -qq && \
             build-essential \
             ca-certificates \
             curl \
+	    less \
             libcurl4-openssl-dev \
             libedit-dev \
             libgsm1-dev \

@@ -1,0 +1,11 @@
+# tar balls
+*.tar.gz
+
+# license files
+*.prvc
+
+# emacs backups
+*~
+
+# ignore python virtual environments
+venv/

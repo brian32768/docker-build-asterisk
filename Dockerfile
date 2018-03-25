@@ -27,6 +27,7 @@ RUN apt-get update -qq && \
             libxml2-dev \
             libxslt1-dev \
 	    libncurses5 ncurses-bin ncurses-term \
+	    mariadb-client \
             portaudio19-dev \
 	    procps \
             python-pip \

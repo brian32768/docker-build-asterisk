@@ -1,6 +1,8 @@
 FROM debian:stretch
 MAINTAINER Brian H Wilson <brian@wildsong.biz>
 
+# I added some extremely useful tools in here like ps and mysql client and less...
+
 RUN apt-get update -qq && \
     DEBIAN_FRONTEND=noninteractive \
     apt-get install -y --no-install-recommends \
@@ -39,6 +41,14 @@ RUN apt-get update -qq && \
 	    && \
     apt-get purge -y --auto-remove && rm -rf /var/lib/apt/lists/*
 
+RUN useradd --system asterisk
+RUN pip install j2cli
 
+ENV ASTERISK_VERSION=15.3.0
 
+COPY build-asterisk.sh /build-asterisk
+RUN /build-asterisk && rm -f /build-asterisk
+
+# In this image, I leave the Asterisk source files around, you will
+# have to remove them later if you don't want them...
 

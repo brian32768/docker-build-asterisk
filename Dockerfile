@@ -36,6 +36,7 @@ RUN apt-get update -qq && \
             unixodbc-dev \
             uuid \
             uuid-dev \
+	    vim-tiny \
             xmlstarlet \
 	    && \
     apt-get purge -y --auto-remove && rm -rf /var/lib/apt/lists/*

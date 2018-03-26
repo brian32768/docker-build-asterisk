@@ -1,7 +1,7 @@
 FROM debian:stretch
 MAINTAINER Brian H Wilson <brian@wildsong.biz>
 
-# I added some extremely useful tools in here like ps and mysql client and less...
+# I added some extremely useful tools in here like ps and less...
 
 RUN apt-get update -qq && \
     DEBIAN_FRONTEND=noninteractive \
@@ -29,7 +29,6 @@ RUN apt-get update -qq && \
             libxml2-dev \
             libxslt1-dev \
 	    libncurses5 ncurses-bin ncurses-term \
-	    mariadb-client \
             portaudio19-dev \
 	    procps \
             python-pip \

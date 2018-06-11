@@ -44,7 +44,7 @@ RUN apt-get update -qq && \
 RUN useradd --system asterisk
 RUN pip install j2cli
 
-ENV ASTERISK_VERSION=15.3.0
+ENV ASTERISK_VERSION=15.4.0
 
 COPY build-asterisk.sh /build-asterisk
 RUN /build-asterisk && rm -f /build-asterisk

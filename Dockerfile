@@ -7,6 +7,7 @@ RUN apt-get update -qq && \
     DEBIAN_FRONTEND=noninteractive \
     apt-get install -y --no-install-recommends \
             autoconf \
+	    file \
             binutils-dev \
             build-essential \
             ca-certificates \
@@ -15,7 +16,6 @@ RUN apt-get update -qq && \
             libcurl4-openssl-dev \
             libedit-dev \
             libgsm1-dev \
-            libjansson-dev \
             libogg-dev \
             libpopt-dev \
             libresample1-dev \
@@ -44,7 +44,7 @@ RUN apt-get update -qq && \
 RUN useradd --system asterisk
 RUN pip install j2cli
 
-ENV ASTERISK_VERSION=15.4.0
+ENV ASTERISK_VERSION=16.0.0
 
 COPY build-asterisk.sh /build-asterisk
 RUN /build-asterisk && rm -f /build-asterisk

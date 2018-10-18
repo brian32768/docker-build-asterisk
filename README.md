@@ -1,11 +1,11 @@
 # docker-build
-Debian Stretch + build environment for Asterisk 15
+Debian Stretch + build environment for Asterisk 16
 
 I store this image up on Docker hub, then I use a private Dockerfile
 that uses jinja2 templates to actually configure Asterisk.
 
 It was forked from the respoke/asterisk github repo so I could use
-newer Debian (9) and Asterisk (15) versions.
+newer Debian and Asterisk versions.
 
 This contains the pre-built Asterisk but does not run it, I do that in
 a separate Dockerfile to control all the configuration.
@@ -31,7 +31,7 @@ templates to the `/etc/asterisk/` directory with the file extension `.j2` and th
 be processed. See the [Official Jinja2 Template Designer Documentation][] for
 details on the template syntax.
 
-## running
+## Running
 
 This is how I do it:
 docker run -d --name=asterisk --net=host asterisk
@@ -40,7 +40,7 @@ docker run -d --name=asterisk --net=host asterisk
 
 All I have so far is the "latest".
 
-# license
+# License
 
 [MIT](https://github.com/respoke/asterisk-docker/blob/master/LICENSE)
 
@@ -49,5 +49,13 @@ All I have so far is the "latest".
 [github/asterisk]: https://github.com/asterisk/asterisk
 [dockerhub/asterisk]: https://hub.docker.com/r/respoke/asterisk/
 [Official Jinja2 Template Designer Documentation]: http://jinja.pocoo.org/docs/dev/templates/
+
+## Changes for Asterisk 16.
+
+Changed version number in Dockerfile.
+
+Removed libjansson-dev package. It's too old.
+
+Added '--with-jansson-bundle' in build-asterisk.sh
 
 

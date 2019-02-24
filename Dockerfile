@@ -44,11 +44,12 @@ RUN apt-get update -qq && \
 RUN useradd --system asterisk
 RUN pip install j2cli
 
-ENV ASTERISK_VERSION=16.0.0
+ENV ASTERISK_VERSION=16.2.0
 
 COPY build-asterisk.sh /build-asterisk
+
+# This will download a tarball and unpack and build it.
 RUN /build-asterisk && rm -f /build-asterisk
 
-# In this image, I leave the Asterisk source files around, you will
-# have to remove them later if you don't want them...
-
+# In this image, I leave the Asterisk source files around;
+# you will have to remove them later if you don't want them.

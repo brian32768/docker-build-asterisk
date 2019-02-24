@@ -1,28 +1,29 @@
-# docker-build
-Debian Stretch + build environment for Asterisk 16
+# docker-build-asterisk
+Builder for Asterisk 16 based on Debian Stretch
 
-I store this image up on Docker hub, then I use a private Dockerfile
-that uses jinja2 templates to actually configure Asterisk.
+I store this image up on Docker hub, then I derive another Dockerfile
+from it that uses jinja2 templates to actually configure Asterisk and
+run it.
 
-It was forked from the respoke/asterisk github repo so I could use
+My projects were forked from the respoke/asterisk github repo so I could use
 newer Debian and Asterisk versions.
 
-This contains the pre-built Asterisk but does not run it, I do that in
-a separate Dockerfile to control all the configuration.
+This image will contain a pre-built Asterisk but does not run it, I do
+that in a separate Dockerfile to control all the configuration.
 
-## usage
+## Usage
 
 Include in a Dockerfile, like this
 
-    FROM wildsong/build
+    FROM wildsong/build-asterisk
 
 or fork the github project if you want more control
 
-    git clone https://github.com/wildsong/docker-build.git
-    cd docker-build
-    docker build -t asterisk .
+    git clone https://github.com/wildsong/docker-build-asterisk.git
+    cd docker-build-asterisk
+    docker build -t build-asterisk .
 
-## using environment variables and templates
+## Using environment variables and templates
 
 The entrypoint of this image looks for any Jinja2 templates in `/etc/asterisk/` and
 processes them, replacing variables with the environment variable of the same name.
@@ -36,15 +37,17 @@ details on the template syntax.
 This is how I do it:
 docker run -d --name=asterisk --net=host asterisk
 
-## repo tags
+## Repo tags
 
 All I have so far is the "latest".
 
 # License
 
-[MIT](https://github.com/respoke/asterisk-docker/blob/master/LICENSE)
+[MIT]
 
 ## The original works are here
+
+Hmm my markdown is wrong, need to fix this. There are links in README.md, honest.
 
 [github/asterisk]: https://github.com/asterisk/asterisk
 [dockerhub/asterisk]: https://hub.docker.com/r/respoke/asterisk/
@@ -57,5 +60,3 @@ Changed version number in Dockerfile.
 Removed libjansson-dev package. It's too old.
 
 Added '--with-jansson-bundle' in build-asterisk.sh
-
-

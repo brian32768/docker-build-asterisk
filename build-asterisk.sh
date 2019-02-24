@@ -17,7 +17,7 @@ curl -vsL http://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk
 # 1.5 jobs per core works out okay
 : ${JOBS:=$(( $(nproc) + $(nproc) / 2 ))}
 
-./configure  --with-resample --with-pjproject-bundled --with-jansson-bundled
+./configure  --with-resample --with-jansson-bundled
 
 make menuselect/menuselect menuselect-tree menuselect.makeopts
 

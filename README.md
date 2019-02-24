@@ -1,5 +1,5 @@
 # docker-build-asterisk
-Builder for Asterisk 16 based on Debian Stretch
+Asterisk 16 built on Debian Stretch
 
 I store this image up on Docker hub, then I derive another Dockerfile
 from it that uses jinja2 templates to actually configure Asterisk and
@@ -8,14 +8,15 @@ run it.
 My projects were forked from the respoke/asterisk github repo so I could use
 newer Debian and Asterisk versions.
 
-This image will contain a pre-built Asterisk but does not run it, I do
-that in a separate Dockerfile to control all the configuration.
+This image will contain Asterisk built from source code but does not
+run it, I do that in a separate Dockerfile to control all the
+configuration.
 
 ## Usage
 
 Include in a Dockerfile, like this
 
-    FROM wildsong/build-asterisk
+    FROM wildsong/asterisk
 
 or fork the github project if you want more control
 
@@ -34,8 +35,9 @@ details on the template syntax.
 
 ## Running
 
-This is how I do it:
-docker run -d --name=asterisk --net=host asterisk
+You can do this but it's pointless because the asterisk will be unconfigured.
+
+    docker run -d --name=asterisk --net=host wildsong/build-asterisk
 
 ## Repo tags
 

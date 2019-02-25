@@ -1,7 +1,7 @@
 FROM debian:stretch
 MAINTAINER Brian H Wilson <brian@wildsong.biz>
 
-# I added some extremely useful tools in here like ps and less...
+# I added some useful tools in here like ps and less and tcpdump.
 
 RUN apt-get update -qq && \
     DEBIAN_FRONTEND=noninteractive \
@@ -33,6 +33,7 @@ RUN apt-get update -qq && \
 	    procps \
             python-pip \
 	    python-setuptools \
+	    tcpdump \
             unixodbc-dev \
             uuid \
             uuid-dev \

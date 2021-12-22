@@ -1,5 +1,5 @@
 # docker-build-asterisk
-Asterisk 16 built on Debian Stretch
+Asterisk 18.9 built on Debian Bullseye
 
 I store this image up on Docker hub, then I derive another Dockerfile
 from it that uses jinja2 templates to actually configure Asterisk and
@@ -49,11 +49,10 @@ All I have so far is the "latest".
 
 ## The original works are here
 
-Hmm my markdown is wrong, need to fix this. There are links in README.md, honest.
 
-[github/asterisk]: https://github.com/asterisk/asterisk
-[dockerhub/asterisk]: https://hub.docker.com/r/respoke/asterisk/
-[Official Jinja2 Template Designer Documentation]: http://jinja.pocoo.org/docs/dev/templates/
+[github/asterisk](https://github.com/asterisk/asterisk)
+[dockerhub/asterisk](https://hub.docker.com/r/respoke/asterisk/)
+[Official Jinja2 Template Designer Documentation](http://jinja.pocoo.org/docs/dev/templates/)
 
 ## Changes for Asterisk 16.
 

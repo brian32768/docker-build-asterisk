@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:bullseye
 MAINTAINER Brian H Wilson <brian@wildsong.biz>
 
 # I added some useful tools in here like ps and less and tcpdump.
@@ -45,7 +45,7 @@ RUN apt-get update -qq && \
 RUN useradd --system asterisk
 RUN pip install j2cli
 
-ENV ASTERISK_VERSION=16.2.0
+ENV ASTERISK_VERSION=18.9.0
 
 COPY build-asterisk.sh /build-asterisk
 

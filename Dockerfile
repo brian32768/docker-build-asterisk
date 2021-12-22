@@ -23,7 +23,6 @@ RUN apt-get update -qq && \
             libspeex-dev \
             libspeexdsp-dev \
             libsqlite3-dev \
-            libsrtp0-dev \
             libssl-dev \
             libvorbis-dev \
             libxml2-dev \
@@ -31,7 +30,7 @@ RUN apt-get update -qq && \
 	    libncurses5 ncurses-bin ncurses-term \
             portaudio19-dev \
 	    procps \
-            python-pip \
+            python3-pip \
 	    python-setuptools \
 	    tcpdump \
             unixodbc-dev \

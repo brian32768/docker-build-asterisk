@@ -8,7 +8,7 @@ fi
 
 set -ex
 
-mkdir -p /usr/src/asterisk
+mkdir /usr/src/asterisk
 cd /usr/src/asterisk
 
 curl -vsL http://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk-${ASTERISK_VERSION}.tar.gz |
@@ -48,4 +48,6 @@ cp /usr/src/asterisk/configs/basic-pbx/*.conf /etc/asterisk/
 sed -i -E 's/^;(run)(user|group)/\1\2/' /etc/asterisk/asterisk.conf
 
 cd /
+
+# Uncomment this if you want to remove the asterisk source files.
 #exec rm -rf /usr/src/asterisk

@@ -1,0 +1,6 @@
+name: "Asterisk PBX"
+description: "Asterisk PBX built on Debian 11 (Bullesye)"
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+

@@ -44,7 +44,7 @@ RUN apt-get update -qq && \
 RUN useradd --system asterisk
 RUN pip install j2cli
 
-ENV ASTERISK_VERSION=18.9.0
+ENV ASTERISK_VERSION=18.10.1
 
 COPY build-asterisk.sh /build-asterisk
 

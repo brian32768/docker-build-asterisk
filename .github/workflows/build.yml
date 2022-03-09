@@ -4,7 +4,7 @@ on:
       - 'master'
 jobs:
   build_docker_image:
-    runs-on: debian-latest
+    runs-on: ubuntu-latest
     steps:
       - 
         name: Check out
